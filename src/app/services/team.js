@@ -11,10 +11,10 @@
     var teams = [
       {'uid' : 'A', 'name' : 'Elim'},
       {'uid' : 'B', 'name' : 'Adonai'},
-      {'uid' : 'C', 'name' : 'Leão de Judá'},
+      {'uid' : 'C', 'name' : 'L. de Judá'},
       {'uid' : 'D', 'name' : 'Ebenezér'},
       {'uid' : 'E', 'name' : 'Exôdo'},
-      {'uid' : 'F', 'name' : 'Incomparavél'}
+      {'uid' : 'F', 'name' : 'Incompar.'}
     ];
 
     this.getByUid = getByUid;

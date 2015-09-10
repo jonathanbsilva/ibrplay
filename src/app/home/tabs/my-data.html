@@ -37,10 +37,12 @@
         <br/><b>Cartões</b>
         <md-card-content>
           <md-icon class="yellow-text">sim_card_alert</md-icon>
-          {{ vm.player.yellowCards }} / {{ vm.getTeam(vm.player.team).yellowCards }}
+          {{ vm.player.yellowCards }}
+          <!--/ {{ vm.getTeam(vm.player.team).yellowCards }}-->
           &nbsp;
           <md-icon class="red-text">sim_card_alert</md-icon>
-          {{ vm.player.redCards }} / {{ vm.getTeam(vm.player.team).redCards }}
+          {{ vm.player.redCards }}
+          <!--/ {{ vm.getTeam(vm.player.team).redCards }}-->
         </md-card-content>
       </md-card>
     </div>
