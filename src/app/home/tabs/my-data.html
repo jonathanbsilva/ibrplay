@@ -1,0 +1,48 @@
+<md-content class="md-padding full-height">
+  <form name="player" class="row">
+    <div class="input-field col s8">
+      <select ng-model="vm.player.team"
+              ng-options="team.uid as team.fullName for team in vm.teams"
+              required>
+        <option value="" disabled selected>Selecione</option>
+      </select>
+      <label>Seu Time</label>
+    </div>
+
+    <div class="input-field col s4">
+      <select ng-model="vm.player.shirt"
+              ng-options="shirt for shirt in _.range(1,31)"
+              required>
+        <option value="" disabled selected>Selecione</option>
+      </select>
+      <label>Sua Camisa</label>
+    </div>
+
+    <div class="col s12 center-align animated fadeInUp" ng-show="vm.editingPlayer && !player.$invalid">
+      <md-button ng-click="vm.savePlayer()">Salvar</md-button>
+    </div>
+  </form>
+
+  <div class="row center-align">
+    <div class="col s6">
+      <md-card class="card green lighten-2">
+        <br/><b>Gols</b>
+        <md-card-content>
+          {{ vm.player.goals }}
+        </md-card-content>
+      </md-card>
+    </div>
+    <div class="col s6">
+      <md-card class="card green lighten-2">
+        <br/><b>Cartões</b>
+        <md-card-content>
+          <md-icon class="yellow-text">sim_card_alert</md-icon> {{ vm.player.yellowCards }}
+          &nbsp;
+          <md-icon class="red-text">sim_card_alert</md-icon> {{ vm.player.redCards }}
+        </md-card-content>
+      </md-card>
+    </div>
+  </div>
+
+</md-content>
+

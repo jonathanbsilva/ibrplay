@@ -1,0 +1,29 @@
+<md-content class="md-padding full-height">
+  <md-card class="blue white-text">
+    <md-card-content>
+      <table class="bordered">
+        <thead>
+        <tr>
+          <th>Time</th>
+          <th class="center-align tooltipped" data-position="top" data-tooltip="Pontos">P</th>
+          <th class="center-align tooltipped" data-position="top" data-tooltip="Jogos">J</th>
+          <th class="center-align tooltipped" data-position="top" data-tooltip="Gols Pró">GP</th>
+          <th class="center-align tooltipped" data-position="top" data-tooltip="Gols Contra">GC</th>
+          <th class="center-align tooltipped" data-position="top" data-tooltip="Saldo de Gols">SG</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="team in vm.teams | orderBy:['-points', '-(favourGoals - againstGoals)']">
+          <td>({{ team.uid }}) {{ team.name }}</td>
+          <td class="center-align">{{ team.points }}</td>
+          <td class="center-align">{{ team.games }}</td>
+          <td class="center-align">{{ team.favourGoals }}</td>
+          <td class="center-align">{{ team.againstGoals }}</td>
+          <td class="center-align">{{ team.favourGoals - team.againstGoals }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </md-card-content>
+  </md-card>
+
+</md-content>

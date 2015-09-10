@@ -1,0 +1,9 @@
+{
+  "firebase": "ibrplay",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
