@@ -21,11 +21,7 @@
     this.getList = getList;
 
     function getByUid(uid) {
-      var team = _.find(teams, {'uid' : uid});
-      if (team) {
-        team.fullName = '(' + team.uid + ') ' + team.name;
-      }
-      return team;
+      return _.find(getList(), {'uid' : uid});
     }
 
     function getList() {
@@ -36,6 +32,8 @@
         team.games = 0;
         team.favourGoals = 0;
         team.againstGoals = 0;
+        team.yellowCards = 0;
+        team.redCards = 0;
         team.fullName = '(' + team.uid + ') ' + team.name;
 
         games.forEach(function (game) {
@@ -53,6 +51,8 @@
             team.games++;
             team.favourGoals += me.goals.length;
             team.againstGoals += adversary.goals.length;
+            team.yellowCards += me.yellowCards.length;
+            team.redCards += me.redCards.length;
             if (me.goals.length > adversary.goals.length) {
               team.points += 3;
             } else if (me.goals.length === adversary.goals.length) {

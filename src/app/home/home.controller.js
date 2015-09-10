@@ -6,7 +6,7 @@
     .controller('HomeController', HomeController);
 
   /** @ngInject */
-  function HomeController($scope, Player, Team, Game) {
+  function HomeController($scope, $timeout, Player, Team, Game) {
     var vm = this;
 
     vm.player = Player.get();
@@ -15,10 +15,18 @@
 
     vm.editingPlayer = false;
     vm.savePlayer = savePlayer;
+    vm.getTeam = getTeam;
 
     function savePlayer() {
       vm.player = Player.save(vm.player);
-      vm.editingPlayer = false;
+
+      $timeout(function () {
+        vm.editingPlayer = false;
+      });
+    }
+
+    function getTeam(uid) {
+      return Team.getByUid(uid);
     }
 
     var watch, watchTimes = 0;

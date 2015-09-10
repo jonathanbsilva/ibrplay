@@ -28,7 +28,7 @@
       <md-card class="card green lighten-2">
         <br/><b>Gols</b>
         <md-card-content>
-          {{ vm.player.goals }}
+          {{ vm.player.goals }} / {{ vm.getTeam(vm.player.team).favourGoals }}
         </md-card-content>
       </md-card>
     </div>
@@ -36,9 +36,11 @@
       <md-card class="card green lighten-2">
         <br/><b>Cartões</b>
         <md-card-content>
-          <md-icon class="yellow-text">sim_card_alert</md-icon> {{ vm.player.yellowCards }}
+          <md-icon class="yellow-text">sim_card_alert</md-icon>
+          {{ vm.player.yellowCards }} / {{ vm.getTeam(vm.player.team).yellowCards }}
           &nbsp;
-          <md-icon class="red-text">sim_card_alert</md-icon> {{ vm.player.redCards }}
+          <md-icon class="red-text">sim_card_alert</md-icon>
+          {{ vm.player.redCards }} / {{ vm.getTeam(vm.player.team).redCards }}
         </md-card-content>
       </md-card>
     </div>
